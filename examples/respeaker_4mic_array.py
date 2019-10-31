@@ -26,6 +26,8 @@ if __name__ == '__main__':
             time.sleep(6)
             pixel_ring.off()
             time.sleep(3)
+            pixel_ring.wakeup(30)
+            time.sleep(6)
         except KeyboardInterrupt:
             break
 

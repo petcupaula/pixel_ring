@@ -62,11 +62,15 @@ class Echo(object):
 class GoogleHome(object):
     def __init__(self, show):
         self.basis = [0] * 4 * 12
-        self.basis[0 * 4 + 1] = 8
-        self.basis[3 * 4 + 1] = 4
-        self.basis[3 * 4 + 2] = 4
+        #red:
+        #self.basis[0 * 4 + 1] = 8
+        #yellow:
+        #self.basis[3 * 4 + 1] = 4
+        #self.basis[3 * 4 + 2] = 4
+        #green:
         self.basis[6 * 4 + 2] = 8
-        self.basis[9 * 4 + 3] = 8
+        #blue:
+        #self.basis[9 * 4 + 3] = 8
 
         self.pixels = self.basis
 
@@ -82,19 +86,19 @@ class GoogleHome(object):
         basis = self.basis[position*-4:] + self.basis[:position*-4]
         
         pixels = [v * 25 for v in basis]
-        self.show(pixels)
-        time.sleep(0.1)
+        #self.show(pixels)
+        #time.sleep(0.1)
 
         pixels =  pixels[-4:] + pixels[:-4]
-        self.show(pixels)
-        time.sleep(0.1)
+        #self.show(pixels)
+        #time.sleep(0.1)
 
         for i in range(2):
             new_pixels = pixels[-4:] + pixels[:-4]
             
-            self.show([v/2+pixels[index] for index, v in enumerate(new_pixels)])
+            #self.show([v/2+pixels[index] for index, v in enumerate(new_pixels)])
             pixels = new_pixels
-            time.sleep(0.1)
+            #time.sleep(0.1)
 
         self.show(pixels)
         self.pixels = pixels
